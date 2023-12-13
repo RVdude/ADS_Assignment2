@@ -7,7 +7,7 @@ pd.options.display.max_columns = 150
 
 def dataframe_retrieve(filename):
     '''
-    retrieving dataframe.
+    retrieving 2 dataframes - yearwise and countrywise.
     '''
     df_year_feat = pd.read_excel(filename,engine="openpyxl")
     df_country_feat = pd.melt(df_year_feat, id_vars=['Country Name', 'Country Code', 'Indicator Name', 'Indicator Code'],
@@ -187,6 +187,7 @@ sns.heatmap(df_uruguay.corr(), annot=True, cmap='YlGnBu', linewidths=.5, fmt='.3
 df_parag= feature_value_selected(sample_df_country,'Country Name',['Paraguay'])
 df_parag = indicator_filtered_data(df_parag)
 df_parag = df_parag[features_filt]
+plt.figure()
 sns.heatmap(df_parag.corr(), annot=True, cmap='YlGnBu', linewidths=.5, fmt='.3g')
 
 
