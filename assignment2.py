@@ -64,7 +64,7 @@ for v in country_dict.values():
 
 
 
-print(ample_df_country.describe())
+print(sample_df_country.describe())
 
 
 df_arable= feature_value_selected(sample_df_country,'Indicator Name',['Arable land (% of land area)'])
